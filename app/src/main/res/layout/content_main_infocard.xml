@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:background="@drawable/cardviewlike"
+    android:descendantFocusability="afterDescendants">
+    <TableLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_img_num"
+                android:textColor="@android:color/white"
+                android:id="@+id/tv_img_num_label"
+                android:labelFor="@+id/tvImg_num"/>
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/no_text"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvImg_num"
+                android:gravity="right" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_clip_length"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvCliplength_label"
+                android:labelFor="@+id/tvCliplength"/>
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/no_text"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvCliplength"
+                android:gravity="right" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_duration"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvduration_label"
+                android:labelFor="@+id/tvDuration"/>
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/no_text"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvDuration"
+                android:gravity="right" />
+
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

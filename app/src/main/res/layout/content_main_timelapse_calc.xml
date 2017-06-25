@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:background="@drawable/cardviewlike"
+    android:descendantFocusability="afterDescendants">
+    <TableLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_interval"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvInterval"
+                android:labelFor="@+id/etTimeBeforeEachClick"/>
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etInterval"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/etInterval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@android:color/white"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/widget_label_text_size" />
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etInterval"
+                android:onClick="increaseInteger"
+                android:text="+" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_img_num"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvImgNum"
+                android:labelFor="@+id/etIMG_NUM"/>
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etIMG_NUM"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/etIMG_NUM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@android:color/white"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/widget_label_text_size" />
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etIMG_NUM"
+                android:onClick="increaseInteger"
+                android:text="+" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_fps"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvFPS"
+                android:labelFor="@+id/etFPS"/>
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etFPS"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/etFPS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@android:color/white"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/widget_label_text_size" />
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etFPS"
+                android:onClick="increaseInteger"
+                android:text="+" />
+
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:background="@drawable/cardviewlike"
+    android:descendantFocusability="afterDescendants">
+
+    <TableLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tablelayout1">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_start"
+                android:textColor="@android:color/white"
+                android:id="@+id/delayed_switch_label"
+                android:labelFor="@+id/delayed_switch"/>
+
+            <Switch
+                android:id="@+id/delayed_switch"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:checked="false" />
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:paddingBottom="@dimen/widget_text_field_padding"
+                android:paddingTop="@dimen/widget_text_field_padding"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:textSize="@dimen/widget_label_text_size"
+                android:text="@string/widget_delay"
+                android:textColor="@android:color/white"
+                android:id="@+id/tvdelay_label"
+                android:labelFor="@+id/etDelay"/>
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:id="@+id/delay_minus"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etDelay"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <EditText
+                android:id="@+id/etDelay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@android:color/white"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:maxLength="8"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/widget_label_text_size" />
+
+            <Button
+                style="@style/AppTheme.buttonStyle"
+                android:id="@+id/delay_plus"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:labelFor="@+id/etDelay"
+                android:onClick="increaseInteger"
+                android:text="+" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

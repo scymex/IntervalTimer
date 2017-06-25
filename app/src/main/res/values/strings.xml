@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Interval Timer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_get_coordinates">Get coordinates</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">CLICK TO GET THE COORDINATES</string>
+
+    <string name="widget_interval">Interval</string>
+    <string name="widget_fps">FPS</string>
+    <string name="widget_duration">Duration</string>
+    <string name="widget_img_num">Number of shots</string>
+    <string name="widget_clip_length">Clip length</string>
+    <string name="widget_delay">Delay in seconds</string>
+    <string name="widget_coordx">Y-coordinate</string>
+    <string name="widget_coordy">X-coordinate</string>
+    <string name="no_text">no_text</string>
+    <string name="widget_immediate_starts">Now</string>
+    <string name="widget_delayed_starts">Delayed</string>
+    <string name="widget_start">Delayed</string>
+    <string name="widget_endless">Endless repeat</string>
+
+</resources>
