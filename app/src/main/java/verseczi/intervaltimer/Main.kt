@@ -276,11 +276,8 @@ class Main : AppCompatActivity() {
                             bnDelayPlus.background.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY)
                         }
                     }
-                    swEndlessrepeat -> Log.e("scymex", "update swDelay $isChecked")
                 }
-                Log.e("scymex", "update swEndlessrepeat $isChecked")
             }
-
         }
 
         etImgQty.addTextChangedListener(GenericTextWatcher(etImgQty))
@@ -307,7 +304,6 @@ class Main : AppCompatActivity() {
         } else {
             isCancelled = savedInstanceState.getSerializable("cancalled") as Boolean
         }
-        Log.e("scymex", "isCancelled@main: $isCancelled")
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -337,12 +333,10 @@ class Main : AppCompatActivity() {
     val mConnection: ServiceConnection = object : ServiceConnection {
 
         override fun onServiceDisconnected(name: ComponentName) {
-            Log.e("SCYMEX", "ÉPPMOSTDISCCONNECTELŐDÖTTEEE")
             _clickingService = null
         }
 
         override fun onServiceConnected(name: ComponentName, service: IBinder) {
-            Log.e("SCYMEX", "ÉPPMOSTCONNECTELŐDÖTTE")
             val mLocalBinder = service as clickingService.LocalBinder
             _clickingService = mLocalBinder.getServerInstance()
 
@@ -352,7 +346,6 @@ class Main : AppCompatActivity() {
             if (isCancelled) {
                 db.cancelled = false
                 isCancelled = false
-                Log.e("SCYMEX?", "YOnemyo")
                 currentProgressstate = _clickingService?.getProgress() as Int
                 _clickingService?.stopClicking()
                 val builder = AlertDialog.Builder(mContext)
@@ -388,7 +381,6 @@ class Main : AppCompatActivity() {
                     startClickingService(db.imgQty, db.delayed, true)
             } else {
                 //rootDenied()
-                Log.e("scymex", "root denied")
             }
         }
     }

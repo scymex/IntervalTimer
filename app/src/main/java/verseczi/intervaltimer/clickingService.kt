@@ -101,7 +101,6 @@ class clickingService : Service(), SensorEventListener {
 
     fun startClicking() {
         clickerThread = clickerThread(mContext, mHandler)
-        Log.e("scymeX", "$_imgQty $_delayed")
         notify?.createNotification()
         clickerThread._imgQty = _imgQty
         clickerThread._delayed = _delayed
@@ -222,8 +221,6 @@ class clickingService : Service(), SensorEventListener {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        Log.e("SCYMEX", "asd: " + newConfig)
-
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             landscape_mode = true

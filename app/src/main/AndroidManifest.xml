@@ -16,7 +16,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".helpers.NotificationHelper$switchButtonListener" />
 
         <activity
             android:name=".Main"

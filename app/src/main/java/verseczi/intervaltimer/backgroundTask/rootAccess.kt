@@ -29,29 +29,20 @@ class rootAccess(private val mContext: Context) :  AsyncTask<Void, Void, Void>()
                 os.flush()
 
                 val currUid = osRes.readLine()
-                var exitSu = false
 
-                if (null == currUid) {
+                if (null == currUid)
+                    // Can't get root access or denied by user
                     accessGranted = false
-                    Log.e("ROOT", "Can't get root access or denied by user")
-                } else if (currUid.contains("uid=0")) {
+                else if (currUid.contains("uid=0"))
+                    // Can't get root access or denied by user
                     accessGranted = true
-                    Log.e("ROOT", "Root access granted")
-                } else {
-                    accessGranted = false
-                    exitSu = true
-                    Log.e("ROOT", "Root access rejected: " + currUid)
-                }
 
-                if (exitSu) {
-                    accessGranted = false
-                    os.writeBytes("exit\n")
-                    os.flush()
-                }
+
+                os.writeBytes("exit\n")
+                os.flush()
             }
         } catch (e: Exception) {
             accessGranted = false
-            Log.e("ROOT", "Root access rejected [" + e.javaClass.name + "] : " + e.message)
         }
 
         intent.putExtra("accessGranted", accessGranted)
