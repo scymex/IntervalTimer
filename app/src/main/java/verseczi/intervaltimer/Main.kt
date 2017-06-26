@@ -13,7 +13,6 @@ import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.text.SpannableStringBuilder
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnClickListener
@@ -380,9 +379,17 @@ class Main : AppCompatActivity() {
                 else
                     startClickingService(db.imgQty, db.delayed, true)
             } else {
-                //rootDenied()
+                rootDenied()
             }
         }
+    }
+
+    fun rootDenied() {
+        val builder = AlertDialog.Builder(mContext)
+        builder.setTitle("Root access denied!")
+        builder.setMessage("You need to have root access for your device!")
+        builder.setPositiveButton("Ok") { dialog, id ->  dialog.cancel() }
+        builder.create().show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
