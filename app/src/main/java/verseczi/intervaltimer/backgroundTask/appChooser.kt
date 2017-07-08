@@ -34,11 +34,10 @@ class appChooser(private val mContext: Context, private val ivAppIcon: ImageView
 
         dialog_ListView.adapter = adapter
         dialog_ListView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            Log.e("scymex", "Packagename set to: " + packages[position].packageName)
-            db.packageName = packages[position].packageName
+            db.packageName = appList[position].packageName
 
-            ivAppIcon.setImageDrawable(packages[position].loadIcon(pm))
-            tvAppName.text = packages[position].loadLabel(pm)
+            ivAppIcon.setImageDrawable(appList[position].loadIcon(pm))
+            tvAppName.text = appList[position].loadLabel(pm)
             tvAppPackageName.text = db.packageName
             dialog.dismiss()
         }
