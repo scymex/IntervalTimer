@@ -392,6 +392,14 @@ class Main : AppCompatActivity() {
         builder.create().show()
     }
 
+    fun didntChooseApp() {
+        val builder = AlertDialog.Builder(mContext)
+        builder.setTitle("Wrong settings!")
+        builder.setMessage("You didn't choose any app!")
+        builder.setPositiveButton("Ok") { dialog, id ->  dialog.cancel() }
+        builder.create().show()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         if (requestCode == 1) {
             if (resultCode == 1) {
@@ -405,22 +413,25 @@ class Main : AppCompatActivity() {
     }//onActivityResult
 
     fun startClickingService(_imqty: Int = db.imgQty, delayed: Boolean = db.delayed, rootGranted: Boolean = false) {
-        // Getting root access
-        if(!rootGranted) {
-            val rootaccess = rootAccess(this@Main)
-            val filtera = IntentFilter()
-            filtera.addAction(rootaccess.rootaccess)
-            registerReceiver(receiver, filtera)
-            rootaccess.execute()
-        }
-        // Start and bind service if we have root access
-        if(rootGranted) {
-            bindService(_intentService, mConnection, 0)
-            _intentService.putExtra("imgqty", _imqty)
-            _intentService.putExtra("delayed", delayed)
-            startService(_intentService)
-            startChoosedApp()
-        }
+        if(pm.getLaunchIntentForPackage(db.packageName) != null) {
+            // Getting root access
+            if (!rootGranted) {
+                val rootaccess = rootAccess(this@Main)
+                val filtera = IntentFilter()
+                filtera.addAction(rootaccess.rootaccess)
+                registerReceiver(receiver, filtera)
+                rootaccess.execute()
+            }
+            // Start and bind service if we have root access
+            if (rootGranted) {
+                bindService(_intentService, mConnection, 0)
+                _intentService.putExtra("imgqty", _imqty)
+                _intentService.putExtra("delayed", delayed)
+                startService(_intentService)
+                startChoosedApp()
+            }
+        } else
+            didntChooseApp()
     }
 
     fun startChoosedApp () {
