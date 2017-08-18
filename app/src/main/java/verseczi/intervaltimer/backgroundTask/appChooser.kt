@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import android.widget.*
 import verseczi.intervaltimer.R
 import verseczi.intervaltimer.data.Database
-import java.util.ArrayList
+import java.util.*
 
 class appChooser(private val mContext: Context, private val ivAppIcon: ImageView, private val tvAppName: TextView, private val tvAppPackageName: TextView) : AsyncTask<String, String, String>() {
     val db: Database = Database(mContext)
@@ -28,6 +28,7 @@ class appChooser(private val mContext: Context, private val ivAppIcon: ImageView
 
         val packages = pm.getInstalledApplications(PackageManager.GET_META_DATA)
         val appList: ArrayList<ApplicationInfo> = packages.filterTo(ArrayList()) { pm.getLaunchIntentForPackage(it.packageName) != null }
+        Collections.sort(appList, ApplicationInfo.DisplayNameComparator(pm))
 
         var dialog_ListView = dialog.findViewById(R.id.package_list) as ListView
         val adapter = PackageAdapter(mContext, R.layout.package_list_row, appList)
